@@ -1,3 +1,5 @@
+ Suite à une erreur, le projet a du être re-importer . Les contributeurs de ce projets sont : Laetitia, Pauline, Ludovic et Jihane 
+ 
  ![Polygones](https://i.goopics.net/2ZjKR.png) 
 
 #### [Accéder à l'application](https://polygones.herokuapp.com/)
