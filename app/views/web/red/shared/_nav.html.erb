@@ -1,0 +1,21 @@
+<header id="nav_rage">
+
+  <nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% for tab in @tabs %>
+          <li class="nav-item">
+            <a href="<%= tab.item.slug %>" class="nav-link"><%= tab.title %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+      </div>
+  </nav>
+
+</header>

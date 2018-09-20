@@ -1,0 +1,39 @@
+
+<div class="container">
+
+      <%= render 'web/nature/header' %>
+
+      <%= render 'web/nature/menu' %>
+
+      <%= render 'web/nature/articleimage' %>
+
+      <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-12 blog-main">
+          <h3 class="pb-3 mb-4 font-italic border-bottom">
+            From the Firehose
+          </h3>
+
+          <div class="blog-post">
+            <h2 class="blog-post-title"><%= @article.title %></h2>
+            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+
+            <%== @article.content %>
+
+          </div><!-- /.blog-post -->
+
+
+          <nav class="blog-pagination">
+            <a class="btn btn-outline-primary" href="#">Older</a>
+            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <%= render 'web/nature/footer' %>

@@ -1,0 +1,11 @@
+<div class="pro-reviewer-comment">
+  <div class="fix">
+    <div class="floatleft mbl-center">
+      <h5 class="text-uppercase mb-0"><strong><%= comment.name %></strong></h5>
+      <p class="reply-date">  <%= comment.created_at.to_formatted_s(:long) %></p>
+      <p><%= comment.content %></p>
+    </div>
+  </div>
+  
+  <hr>
+</div>

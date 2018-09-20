@@ -1,0 +1,70 @@
+
+<div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <%= link_to admin_dashboard_index_path(@site.url), class:"logo" do %>
+                        <span>
+                            <%= image_tag 'admin/dashboard/logo.png', height:'32' %>
+                        </span>
+                        <i>
+                            <%= image_tag 'admin/dashboard/logo_sm.png', height:'32' %>
+                        </i>
+                    <% end %>
+                </div>
+
+                <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link nav-user" href="<%= root_path + current_user.site.url %>" role="button"
+                               aria-haspopup="false" aria-expanded="false" target="_blank">
+                                <span class="profile-username ml-2 text-dark">Accéder à mon blog</span>
+                            </a>
+                        </li>    
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <i class="noti-icon"></i>
+                                <span class="profile-username ml-2 text-dark"><%= current_user.site.name %></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Bienvenue <%= current_user.first_name %> !</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <span class="dropdown-item notify-item"><i class="mdi mdi-account-circle"></i><%= link_to "Profil", edit_user_registration_path %></span>
+
+                                <!-- item-->
+                                <a href="<%= edit_admin_site_path(@site.url,@site) %>" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-settings"></i> <span>Configuration</span>
+                                </a>
+
+                                <!-- item-->
+                                <span class="dropdown-item notify-item"><i class="mdi mdi-logout-variant"></i>
+                                  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete  %>
+                                </span>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+            <!-- Top Bar End -->

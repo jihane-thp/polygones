@@ -1,0 +1,56 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12  col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Créer un onglet pour plusieurs articles</h4>
+                            <%= form_with(model: [:admin, @tab], local: true) do |form| %>
+                              <% if @tab.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(@tab.errors.count, "erreur") %> empêche cet onglet d'être sauvegardé :</h2>
+
+                                  <ul>
+                                  <% @tab.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                  <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                    <%= form.label :title, class:"col-form-label label1" %>
+                                    <%= form.text_field :title, autofocus: true, autocomplete: "Titre de votre onglet", class:"form-control" %>
+                                  </div>
+                              </div>
+
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                    <%= form.hidden_field :item_type, value: "Category"%>
+                                  </div>
+                              </div>
+
+                              <div class="form-row " id="article" >
+                                  <div class="form-group col-md-12">
+                                    <%= form.label :id, "Sélectionner la catégorie", class:"col-form-label label1" %>
+                                    <%= form.collection_select :item_id, @categories, :id, :title, prompt: true,required: true %>
+
+                                  </div>
+                              </div>
+
+                              <div class="actions">
+                                <%= form.submit :"Créer mon onglet", class:"btn btn-primary" %>
+                              </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <% end %>
+
+
+        </div>
+    </div>
+</div>

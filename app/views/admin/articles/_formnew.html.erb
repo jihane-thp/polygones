@@ -1,0 +1,116 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9  col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Créer un article</h4>
+                            <%= form_with(model: [:admin, article], local: true) do |form| %>
+                              <% if article.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+                                  <ul>
+                                  <% article.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                  <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                    <%= form.label :titre_de_votre_article, class:"col-form-label label1" %>
+                                    <%= form.text_field :title, autofocus: true, autocomplete: "Titre de votre article", class:"form-control" %>
+                                  </div>
+                              </div>
+
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                    <%= form.label :"Lien vers l'image de votre article", class:"col-form-label label1" %>
+                                    <%= form.text_field :image, autofocus: true, autocomplete: "Image de votre article", class:"form-control" %>
+                                  </div>
+                              </div>
+
+                            <!--  <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                      <%= form.label :texte, class:"col-form-label label1" %>
+                                      <%= form.text_area :content, autocomplete: "Texte de votre article", class:"form-control" %>
+                                  </div>
+                              </div>
+                            -->
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                      <%= form.label :texte, class:"col-form-label label1" %>
+                                      <%= form.text_area :content, autocomplete: "Texte de votre article", id:"elm1" %>
+                                  </div>
+                              </div>
+
+
+
+                              <div class="actions">
+                                <%= form.submit :"Créer un article", class:"btn btn-primary" %>
+                              </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Paramètres</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="field">
+                                      <%= form.label :"adresse de l'article", class:"col-form-label label1" %>
+                                      <%= form.text_field :slug, autocomplete: "Adresse de votre article", class:"form-control" %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                <%= form.label :"Catégorie", class:"col-form-label label1" %><br/>
+
+                                <%= form.collection_select :category_id, Category.where(site: @site), :id, :title, prompt: true %>
+
+
+
+                                <br/>
+                                <%= link_to "Nouvelle catégorie", admin_categories_path, target: "_blank" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+            $(document).ready(function () {
+                if($("#elm1").length > 0){
+                    tinymce.init({
+                        selector: "textarea#elm1",
+                        theme: "modern",
+                        height:300,
+                        plugins: [
+                            "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                            "save table contextmenu directionality emoticons template paste textcolor"
+                        ],
+                        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+                        style_formats: [
+                            {title: 'Bold text', inline: 'b'},
+                            {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                            {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                            {title: 'Example 1', inline: 'span', classes: 'example1'},
+                            {title: 'Example 2', inline: 'span', classes: 'example2'},
+                            {title: 'Table styles'},
+                            {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                        ]
+                    });
+                }
+            });
+        </script>

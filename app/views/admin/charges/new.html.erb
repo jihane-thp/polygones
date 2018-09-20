@@ -1,0 +1,27 @@
+<%= render 'admin/dashboard/shared/header' %>
+<%= render 'admin/dashboard/shared/sidebar' %>
+
+<div class="content-page">
+    <div class="content">
+<%= form_tag admin_charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Montant: 5,00 €</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
+
+</div>
+</div>
+<%= render 'admin/dashboard/shared/footer' %>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12 col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="m-b-30 m-t-0 header-title">Les utilisateurs</h4> <br/>
+        <table class="table table-striped mb-0">
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>E-mail</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><i class="far fa-trash-alt"></i> <%= link_to ' Supprimer', superadmin_user_path(user), method: :delete, data: { confirm: 'Êtes vous sûr.e ?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+</div>

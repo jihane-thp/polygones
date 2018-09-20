@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="m-b-30 m-t-0 header-title">Les blogs</h4> <br/>
+        <table class="table table-striped mb-0">
+          <tbody>
+            <% @sites.each do |site| %>
+              <tr>
+                <td><%= site.name %></td>
+                <td><i class="far fa-eye"></i> <%= link_to "Voir", root_path+(site.url) %></td>
+                <td><i class="far fa-trash-alt"></i> <%= link_to ' Supprimer', superadmin_site_path(site), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

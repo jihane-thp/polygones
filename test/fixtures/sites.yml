@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+web:
+  name: MyString
+  slogan: MyString
+  meta_description: MyString
+  meta_title: MyString
+
+web2:
+  name: MyString
+  slogan: MyString
+  meta_description: MyString
+  meta_title: MyString

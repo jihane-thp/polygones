@@ -1,0 +1,30 @@
+
+
+<%= link_to "Gestion des articles", admin_articles_path %> <br/>
+<%= link_to "Gestion des categories", admin_categories_path %><br/>
+
+<%= link_to "Voir mon compte", edit_user_registration_path %><br/>
+<%= link_to "Gestion de mon site", admin_site_configuration_path %><br/>
+<%= link_to "Gestion du menu", admin_site_menu_path %><br/>
+
+
+<%if user_signed_in? %>
+<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %><br/>
+<% end %>
+
+
+<h1>Catalogue produit</h1>
+
+<% @products.each do |product| %>
+  <div class="row mb-4">
+    <div class="card w-50 bg-light">
+      <div class="card-body">
+        <h2 class="card-title"><%= product.title %></h2>
+      </div>
+      <div class="card-footer text-center font-weight-bold">
+        <%= number_to_currency product.price, unit: '€', separator: ',', format: '%n %u' %>
+        <%= link_to "Ajouter au panier", cart_products_path(product_id: product), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

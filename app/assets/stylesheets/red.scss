@@ -1,0 +1,32 @@
+// Place all the styles related to the rage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'web/red/_banner';
+@import 'web/red/_card';
+@import 'web/red/_footer';
+@import 'web/red/_nav';
+@import 'web/red/_navigation';
+@import 'web/red/_responsive';
+@import 'web/red/_section';
+
+@import url("https://use.typekit.net/wxs4zbu.css");
+
+.red{
+	background-color: #F6F6F6;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.red .btn{
+	color: #ecf0f1!important;
+	border-color: #ecf0f1!important;
+	background-color: transparent;
+}
+
+.red .navbar a{
+	color: #000000!important;
+}

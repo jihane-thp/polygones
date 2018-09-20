@@ -1,0 +1,61 @@
+<div class="content-page">
+ 	<div class="content">
+ 		<div class="container-fluid">
+ 			<div class="row">
+ 				<div class="col-12 col-xs-12">
+ 					<div class="card">
+ 						<div class="card-body">
+ 							<h4 class="m-b-30 m-t-0 header-title">Confirmer la commande</h4>
+              <div class="tab-content">
+                <!-- shopping-cart start -->
+                <div class="tab-pane active" id="shopping-cart">
+                  <form action=" <% new_admin_order_path %>">
+                    <div class="shop-cart-table">
+                      <div class="table-content table-responsive">
+
+
+                              <% for @product_in_cart in @cart.products %>
+                                <%= render 'admin/carts/shared/cart_product', product_in_cart: @product_in_cart , edit_quantity: false, edit_remove: true %>
+                              <% end %>
+
+                        <br/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="customer-login payment-details mt-30 mb-30">
+                          <h4>Total : <%=  @cart.total %> €</h4>
+                          <br/>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                  
+<%= form_tag admin_pay_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Montant: <%= @total %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Polygones"
+          data-amount="<%= @total_stripe %>"
+          data-currency="Eur"
+          data-email="<%= @user.email%>"></script>
+<% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

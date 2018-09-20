@@ -1,0 +1,131 @@
+<!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Bienvenue sur votre espace d'administration !</h4>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-xl-4 col-md-8">
+                                <div class="widget-panel widget-style-2 bg-pink">
+                                    <i class="ion-md-document"></i>
+                                    <h2 class="m-0 text-white" data-plugin="counterup"><%= @nb_articles %></h2>
+                                    <div>Articles</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-8">
+                                <div class="widget-panel widget-style-2 bg-purple">
+                                    <i class="ion-md-text"></i>
+                                    <h2 class="m-0 text-white" data-plugin="counterup"><%= @nb_commentaires%></h2>
+                                    <div>Commentaires</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-8">
+                                <div class="widget-panel widget-style-2 bg-info">
+                                    <i class="ion-ios-folder"></i>
+                                    <h2 class="m-0 text-white" data-plugin="counterup"><%= @nb_categories %></h2>
+                                    <div>Catégories</div>
+                                </div>
+                            </div>
+                        </div> <!-- end row -->
+
+
+
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="m-b-30 m-t-0 header-title">Mes derniers articles</h4><br/>
+                                        <table class="table mb-0">
+                                            <tbody>
+
+                                                <% if @articles.empty? %>
+                                                    <p>Vous n'avez pas encore écrit d'article.</p>
+                                                <% else %>
+                                                    <% for article in @articles %>
+                                                    <tr>
+                                                        <td><%= article.title.slice(0..50) %></td>
+                                                        <td><i class="far fa-edit"></i><%= link_to ' Editer', edit_admin_article_path(@site.url, article) %></td>
+                                                        <td><i class="far fa-trash-alt"></i><%= link_to ' Supprimer', admin_article_path(@site.url,article), method: :delete, data: { confirm: 'Êtes-vous sûr·e?' } %></td>
+                                                    </tr>
+                                                    <%end%>
+                                                <% end %>
+                                            </tbody>
+                                        </table>
+                                        <%= link_to 'Créer un nouvel article', new_admin_article_path(@site.url), class:"btn btn-primary" %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="m-b-30 m-t-0 header-title">Mes derniers commentaires</h4>
+                                        <table class="table mb-0">
+                                            <tbody>
+                                            <br/>
+
+                                                 <% if @comments.empty? %>
+                                                    <p>Vous n'avez pas encore de commentaires.</p>
+                                                 <% else %>
+                                                    <% for commentaire in @comments %>
+                                                    <tr>
+                                                        <td><%= commentaire.content.slice(0..50) %>...</td>
+                                                        <td><i class="far fa-eye"></i><%= link_to ' Voir', admin_comment_path(@site.url,commentaire) %></td>
+                                                        <td><i class="far fa-trash-alt"></i><%= link_to ' Supprimer', admin_comment_path(@site.url,commentaire), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                                    </tr>
+                                                    <% end%>
+                                                 <% end %>
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <script type="text/javascript">
+            $(document).ready(function () {
+                if($("#elm1").length > 0){
+                    tinymce.init({
+                        selector: "textarea#elm1",
+                        theme: "modern",
+                        height:300,
+                        plugins: [
+                            "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                            "save table contextmenu directionality emoticons template paste textcolor"
+                        ],
+                        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+                        style_formats: [
+                            {title: 'Bold text', inline: 'b'},
+                            {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                            {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                            {title: 'Example 1', inline: 'span', classes: 'example1'},
+                            {title: 'Example 2', inline: 'span', classes: 'example2'},
+                            {title: 'Table styles'},
+                            {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                        ]
+                    });
+                }
+            });
+        </script>

@@ -1,0 +1,35 @@
+<div class="content-page">
+ 	<div class="content">
+ 		<div class="container-fluid">
+ 			<div class="row">
+ 				<div class="col-12 col-xs-12">
+ 					<div class="card">
+ 						<div class="card-body">
+ 							<h4 class="m-b-30 m-t-0 header-title">Mes commandes</h4> <br/>
+              <p>
+              <strong>Date:</strong>
+              <%= @order.created_at.to_formatted_s(:fulldate) %>
+            </p>
+
+            <p>
+              <strong>Prix:</strong>
+              <%= @order.price %> €
+            </p>
+
+            <p>
+              <strong>Produit acheté :</strong>
+              <% for product in @order.products %>
+              <%= product.title %>
+              <% end %>
+            </p>
+            
+
+            </div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>	
+
+

@@ -1,24 +1,84 @@
-# README
+ ![Polygones](https://i.goopics.net/2ZjKR.png) 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### [Accéder à l'application](https://polygones.herokuapp.com/)
+---
 
-Things you may want to cover:
+### Menu ###
 
-* Ruby version
+* Présentation 
 
-* System dependencies
+* Expérience utilisateur 
 
-* Configuration
+  * Super-administrateur
+  * Administrateur
+  * Utilisateur
 
-* Database creation
+* Droits d'accès
 
-* Database initialization
+* Description technique
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Présentation : ##  
+ 
+ Polygones est un C.M.S. *(Content Management System)*, système de gestion de contenus, permet de créer un blog facilement. Cette application personnalise l'expérience utilisateur par la liberté d'insérer des supports média *(photos, vidéos)* et des articles, de façon ludique. Elle est basée sur le framework "Ruby on Rails". 
 
-* ...
+
+---
+
+## Expérience utilisateur :
+
+
+#### Super-administrateur :
+
+- Je peux voir la liste des sites créés
+
+- Je peux rajouter des templates *(configuration visuelle)* en vente pour les administrateurs
+
+- Je peux voir les statistiques des ventes de mes templates  
+
+
+#### Administrateur :
+
+- Je peux créer un compte
+
+- Je peux créer un menu
+
+- Je peux configurer mon blog
+
+- Je peux ajouter des photos et des vidéos dans mes articles
+
+- Je peux gérer mes articles et les commentaires des utilisateurs
+
+- Je peux commander des templates *(configuration visuelle)* et donner un nouveau visage à mon blog
+
+- Je peux accéder aux statistiques des visites sur mon blog
+
+
+
+#### Utilisateur :
+
+- Je peux lire les articles
+
+- Je peux commenter les articles
+
+---
+
+## Description technique :
+
+Pour faire tourner cette application, on utilise:
+
+| Gem | Description |
+|-----|-------------|
+| ruby v 2.5.1 | Langage framework |
+| rails v 5.2.1 | Gestion de l'application |
+| pg (postgresql) | Gestion de la base de données en production |
+| dotenv | Gestion des clés api |
+| stripe | Gestion du paiement |
+| devise | Gestion des utilisateurs|
+
+
+---
+
+

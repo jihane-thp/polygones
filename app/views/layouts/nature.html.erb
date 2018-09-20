@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @site.nil? ? "Polygones" : @site.name %></title>
+    <meta name="description"  content="<%= @site.nil? ? "Polygones" : @site.meta_description%>" />
+    <meta name="title"  content="<%= @site.nil? ? "Polygones" : @site.meta_title%>" />
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <% if @site.nil? %>
+      
+    <% else %>
+      <%= stylesheet_link_tag    @site.template.slug , media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'web', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

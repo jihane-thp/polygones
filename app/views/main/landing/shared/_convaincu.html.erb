@@ -1,0 +1,21 @@
+		<section class="bg-light section" id="clients">
+	        <div class="container">
+	        	<div class="row text-center">
+					<div class="col-sm-12">
+						
+						<div class="row hero-content text-center">
+							<div class="col-lg-12">
+								<h2 class="title">Convaincu ?</h2>
+									<% if user_signed_in? && current_user.admin?%>
+										<%= link_to "J'accède à ma console d'administration", admin_dashboard_index_path(current_user.site.url), class:"btn-signup btn-primary btn-lg" %>
+									<% else %>
+										<%= link_to "Je crée mon blog gratuitement", new_user_registration_path, class:"btn-signup btn-primary btn-lg" %>
+									<% end %>
+
+							</div>
+						</div>
+					</div> <!-- end Col -->
+				</div> <!-- end row -->
+	        </div><!-- /End Container -->
+	    </section>
+	    <!-- End Clients -->

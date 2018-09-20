@@ -1,0 +1,29 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title"><%= @product.title %></h4><br/>
+
+
+                            <p>
+                              <strong>Prix :</strong>
+                              <%= @product.price %> €
+                            </p>
+                            <p>
+                              <%= image_tag @product.image, class:"image-product" %>
+                            </p>
+                            <p>
+                                <%= link_to ' Ajouter au panier', admin_add_product_in_cart_path(@site.url,@product.id), class:"btn btn-primary md-10" %>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

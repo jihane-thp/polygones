@@ -1,0 +1,2 @@
+class AdminPlugin < ApplicationRecord
+end

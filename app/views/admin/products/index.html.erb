@@ -1,0 +1,55 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Boutique de thèmes</h4><br/>
+
+                            <table class="table table-striped">
+                            
+                              <tbody>
+                                <% @products.each do |product| %>
+                                  <tr>
+                                    <td><%= product.title %></td>
+                                    <td><%= number_to_currency product.price, unit: "€", separator: ",", format: "%n%u" %></td>
+                                    <td><i class="far fa-eye"></i><%= link_to ' En voir plus', admin_product_path(@site.url,product) %></td>
+                                    <td><i class="fas fa-shopping-basket"></i><%= link_to ' Ajouter au panier', admin_add_product_in_cart_path(@site.url,product.id) %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+
+                            <br>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+                <div class="col-md-3 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Panier</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="field">
+                                      <%= render 'admin/carts/shared/cart' %>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

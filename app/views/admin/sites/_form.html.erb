@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, site], local: true, url: admin_site_path(@site.url,site) ) do |form| %>
+
+<div class="form-row align-items-center">
+  <div class="form-group col-md-12">
+    <%= form.label :nom_de_votre_site, class: "col-form-label label1" %>
+    <%= form.text_field :name, autofocus: true, autocomplete: true, class: "form-control" %>
+  </div>
+</div>
+<div class="form-row align-items-center">
+  <div class="form-group col-md-12">    
+    <%= form.label :slogan, class: "col-form-label label1" %>
+    <%= form.text_area :slogan, autocomplete: "Slogan", class: "form-control" %>
+  </div>
+</div>
+<div class="form-row align-items-center">
+  <div class="form-group col-md-12">
+    <%= form.label :titre_de_votre_site_pour_les_moteurs_de_recherche, class: "col-form-label label1" %>
+    <%= form.text_field :meta_title, autocomplete: "Titre de votre site", class: "form-control" %>
+  </div>
+</div>
+<div class="form-row align-items-center">
+  <div class="form-group col-md-12">
+    <%= form.label :description_de_votre_site, class: "col-form-label label1" %>
+    <%= form.text_area :meta_description, autocomplete: "Description de votre site", class: "form-control" %>
+  </div>
+</div>
+  <div class="actions">
+    <%= form.submit :"Enregistrez vos données" %>
+  </div>
+<% end %>

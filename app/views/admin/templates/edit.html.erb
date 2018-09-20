@@ -1,0 +1,12 @@
+<%= render 'admin/dashboard/shared/header' %>
+<%= render 'admin/dashboard/shared/sidebar' %>
+
+<div class="content-page">
+    <div class="content">
+<%= render 'form', template: @template %>
+
+<%= link_to 'Show', admin_template_path %> |
+<%= link_to 'Back', admin_templates_path %>
+
+</div>
+</div>

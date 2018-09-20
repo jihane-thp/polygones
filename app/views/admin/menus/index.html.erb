@@ -1,0 +1,38 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Mon menu</h4><br/>
+                            <table class="table table-striped mb-0">
+                                <tbody>
+
+                                  <% @menus.each do |menu| %>
+                                    <tr>
+                                      <td><%= menu %></td>
+                                      <td><i class="far fa-edit"></i><%= link_to ' Editer', admin_menu_path(@site.url, menu) %></td>
+                                      <td><i class="far fa-trash-alt"></i><%= link_to ' Supprimer', admin_menu_path(@site.url, menu), method: :delete, data: { confirm: 'Êtes-vous sûr·e?' } %></td>
+
+
+                                    </tr>
+                                  <% end %>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Options</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

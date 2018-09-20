@@ -1,0 +1,61 @@
+<div class="content-page">
+  <div class="content">
+    <div class="container-fluid">
+      <!-- Nouvelle catégorie -->
+      <div class="row">
+        <div class="col-md-9 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="m-b-30 m-t-0 header-title">Mes catégories</h4> <br/>
+              <table class="table table-striped mb-0">
+
+                <tbody id="categories">
+                  <% if @categories %>
+                  <% if @categories.empty? %>
+                    <p>Vous n'avez pas encore de catégorie.</p>
+                    <% else %>
+                    <% for category in @categories %>
+                      <%= render "admin/categories/category", category: category%>
+                    <% end %>
+                    <%end%>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="m-b-30 m-t-0 header-title">Nouvelle catégorie</h4>
+
+              <div id="error_explanation2">
+              </div>
+              <%= form_with(model: [:admin, @category] , remote: true) do |form| %>
+
+                <div class="form-row align-items-center">
+                  <div class="form-group col-md-12">
+                    <%= form.label :titre_de_la_catégorie , class: "col-form-label label1"%>
+                    <%= form.text_field :title, autocomplete: "Titre de la catégorie", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="form-row align-items-center">
+                  <div class="form-group col-md-12">
+                    <%= form.label :adresse_de_la_catégorie , class: "col-form-label label1"%>
+                    <%= form.text_field :slug, autocomplete: "Adresse de la catégorie", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="actions">
+                    <%= form.submit "Créer", class: 'btn btn-primary mb-2' %>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<%= form_with(model: [:admin, tab], local: true) do |form| %>
+  <% if tab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h2>
+
+      <ul>
+      <% tab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.number_field :order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :menu_id %>
+    <%= form.text_field :menu_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

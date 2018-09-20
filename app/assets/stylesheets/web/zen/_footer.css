@@ -1,0 +1,37 @@
+.zen .footer_zen img{
+	width: 30%;
+	margin-left: 36%;
+}
+
+.zen .footer_zen a:hover{
+	color: #FFA687;
+}
+
+.zen .footer_wrapper{
+	color: #000;
+	font: 11px Lora,sans-serif;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 40px 0;
+	position: relative;
+	z-index: 1;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.zen .bottom_menu{
+	text-align: center;
+	font-size: 12px;
+}
+
+.zen .menu_item_footer a{
+	color: black;
+	line-height: 3;
+	padding: 1.5% 3.78%;
+	border-right: 1px solid #e8e8e8;
+	letter-spacing: 1px;
+}
+
+.zen .menu_item_footer{
+		display: contents;
+
+}

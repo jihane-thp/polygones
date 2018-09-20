@@ -1,0 +1,5 @@
+$('#cart_item_<%= @item %>').remove();
+$('#total_cart').html("<%= @cart.total %>€")
+$('#nbcatcart').html("<%= @cart.items.count %>")
+$('#nbcat').html("<%= @cart.items.count %> items ")
+$('#tr_cart_item_<%= @item %>').remove();

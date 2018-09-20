@@ -1,0 +1,16 @@
+.red .blog-page{
+	text-align: center;
+	padding: 15px 0 5px;
+	display: block;
+}
+
+.red .blog-page span{
+	background-color: #f7f7f7;
+	font-size: 14px;
+	margin-right: 5px;
+	padding: 4px 10px;
+}
+
+.red .blog-page span a{
+	color: black;
+}

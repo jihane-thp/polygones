@@ -1,0 +1,36 @@
+<!-- BLOG-AREA START -->
+<div class="blog-area blog-2  pt-80 pb-80">
+  <div class="container">
+    <div class="blog">
+      <div class="row">
+        <!-- Single-blog start -->
+
+        <% for article in @articles %>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="single-blog mb-30">
+              <div class="blog-photo">
+                <a href="<%= link_article(@site, article) %>">
+                  <img src="<%= article.image%>">
+                </a>
+                <div class="like-share text-center fix">
+                  <a href="<%= @category.slug if !@category.nil?%>/<%=article.slug if !article.nil?%>"><i class="zmdi zmdi-comments"></i><span><%= article.comments.count %> Comments</span></a>
+                </div>
+              </div>
+              <div class="blog-info">
+                <div class="post-meta fix">
+                  <div class="post-date floatleft"><span class="text-dark-red"><%= article.created_at.to_formatted_s(:onlyday) %></span></div>
+                  <div class="post-year floatleft">
+                    <p class="text-uppercase text-dark-red mb-0"><%= article.created_at.to_formatted_s(:monthyear) %></p>
+                    <h4 class="post-title"><a href="<%= link_article(@site, article) %>" tabindex="0"><%= article.title %></a></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        <!-- Single-blog end -->
+      </div>
+    </div>
+  </div>
+<!-- BLOG-AREA END -->
+</div>

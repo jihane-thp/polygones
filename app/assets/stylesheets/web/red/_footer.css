@@ -1,0 +1,13 @@
+.red #footer_rage img{
+	width: 100px;
+	padding-left: 15px;
+}
+
+.red #footer_rage .navbar{
+	background-color: #F6F6F6;
+	border-top: 2px solid rgb(201, 229, 147);
+}
+
+.red .signature {
+	margin-left: 20px;
+}

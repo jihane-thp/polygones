@@ -1,0 +1,32 @@
+<%= form_with(model: cart_product, local: true,url: admin_cart_products_path(@site.url)) do |form| %>
+  <% if cart_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cart_product.errors.count, "error") %> prohibited this cart_product from being saved:</h2>
+
+      <ul>
+      <% cart_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cart_id %>
+    <%= form.text_field :cart_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

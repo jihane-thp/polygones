@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12 col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="m-b-30 m-t-0 header-title">Les thèmes en vente</h4> <br/>
+        <table class="table table-striped mb-0">
+          <thead>
+            <tr>
+              <th>Thème</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @products.each do |superadmin_product| %>
+              <tr>
+                <td><%= superadmin_product.title %></td>
+                <td><%= superadmin_product.price %></td>
+                <td><i class="far fa-edit"></i> <%= link_to ' Editer', edit_superadmin_product_path(superadmin_product) %></td>
+                <td><i class="far fa-trash-alt"></i> <%= link_to ' Supprimer', superadmin_product_path(superadmin_product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br/>
+        <%= link_to 'Nouveau produit', new_superadmin_product_path, class:"btn btn-primary mb-2" %>
+      </div>
+    </div>
+  </div>
+</div>

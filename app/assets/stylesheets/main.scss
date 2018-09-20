@@ -1,0 +1,27 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * All require and require tree . removed
+ * Use @import to import SASS files
+ * Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
+ */
+
+ @import 'main/bootstrap.min';
+ @import 'main/bootstrap-reset';
+ @import 'font-awesome';
+ @import 'main/style';
+
+
+/* --- Import Typekit stylesheets --- */
+@import url("https://use.typekit.net/aqe4lkg.css");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700,900,400italic");
+@import url("http://fonts.googleapis.com/css?family=Cuprum:400,700");

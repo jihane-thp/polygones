@@ -1,0 +1,6 @@
+<tr>
+  <td><%= category.title %></td>
+  <td><i class="far fa-edit"></i> <%= link_to 'Editer', edit_admin_category_path(@site.url,category) %></td>
+  <td><i class="far fa-trash-alt"></i>
+    <%= link_to 'Supprimer', admin_category_path(@site.url,category), method: :delete, data: { confirm: 'Êtes-vous sûr·e?' } %></td>
+</tr>

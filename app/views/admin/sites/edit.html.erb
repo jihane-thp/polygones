@@ -1,0 +1,24 @@
+ <p id="notice"><%= notice %></p>
+
+ <%= render 'admin/dashboard/shared/header' %>
+ <%= render 'admin/dashboard/shared/sidebar' %>
+
+ <div class="content-page">
+ 	<div class="content">
+ 		<div class="container-fluid">
+ 			<div class="row">
+ 				<div class="col-12 col-xs-12">
+ 					<div class="card">
+ 						<div class="card-body">
+ 							<h4 class="m-b-30 m-t-0 header-title">Configuration</h4> <br/>
+
+ 							<%= render 'form', site: @site %>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+
+ <%= render 'admin/dashboard/shared/footer' %>

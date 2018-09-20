@@ -1,0 +1,291 @@
+.zen .topbar{
+	position: fixed;
+	background: #fff;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	box-shadow: 0px 10px 12px -13px #999;
+	-moz-box-shadow: 0px 10px 12px -13px #999;
+	-o-box-shadow: 0px 10px 12px -13px #999;
+	-webkit-box-shadow: 0px 10px 12px -13px #999;
+	transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+
+.zen .rapper{
+	max-width: 1140px;
+	margin: 0 auto;
+	width: 100%;
+	height: 60px;
+}
+
+.zen .lefttop{
+	float: left;
+	line-height: 34px;
+}
+
+.zen #navtop{
+	display: block;
+	height: auto;
+	position: relative;
+}
+
+.zen .section{
+	margin-right: 0;
+	padding: 0;
+}
+
+.zen .section:last-child .widget:last-child{
+	margin-bottom: 0;
+}
+
+.zen .section:first-child .widget:first-child{
+	margin-top: 0;
+}
+
+.zen .widget{
+	line-height: 1.4;
+	position: relative;
+	min-height: 0;
+}
+
+.zen #navtop ul{
+	display: inline-block;
+	font-size: 0;
+	position: relative;
+	z-index: 999;
+	background: inherit;
+}
+
+.zen .widget ul{
+	line-height: 1.4em;
+	padding: 0 0 0 1.25em;
+	margin: 0;
+}
+
+.zen ul{
+	list-style: disc outside;
+}
+
+.zen #navtop ul li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.zen .widget li{
+	text-indent: 0;
+}
+
+.zen #navtop ul a {
+    display: block;
+    padding: 22px 20px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: .5px;
+    -webkit-transform: translateY(0px);
+    -webkit-transition: all 150ms ease-in-out;
+}
+
+.zen a:link {
+    text-decoration: none;
+    outline: none;
+}
+
+.zen ul#masthead > li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 30%;
+    border-left: 1px solid #DBDFDF;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.zen li i.fa.fa-angle-down, li i.fa.fa-angle-right {
+    font-size: 14px;
+    color: #444;
+    padding: 0 0 0 2px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+}
+
+.zen .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+}
+
+.zen div.clear{
+	clear: both;
+}
+
+.zen .clear::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.zen .widget-item-control {
+    float: right;
+    height: 20px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 10;
+}
+
+.zen .socialtop{
+	float: right;
+	position: relative;
+}
+
+.zen .sb-search{
+	position: absolute;
+	width: 200px;
+	min-width: 60px;
+	height: 60px;
+	top: 0;
+	right: 0;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.zen form{
+	margin: 1.5em 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.zen input[type='search'] .sb-search-input{
+	-webkit-appearance: none;
+	padding: 1px 20px;
+	-webkit-border-radius: 0;
+	height: 35px;
+	line-height: 35px;
+	font-size: 13px;
+	font-weight: 400;
+	margin-top: 13px;
+	border: none;
+	padding-right: 30px;
+	background-color: #fff;
+	width: 180px;
+}
+
+.zen input[type='search']{
+	-webkit-transition: border linear .2s,box-shadow linear .2s;
+	-moz-transition: border linear .2s,box-shadow linear .2s;
+	-o-transition: border linear .2s,box-shadow linear .2s;
+	transition: border linear .2s,box-shadow linear .2s;
+	display: inline-block;
+	margin-bottom: 10px;
+	color: #555;
+	vertical-align: middle;
+	border: none;
+}
+
+.zen .sb-search-input {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    outline: none;
+    background: #fff;
+    margin: 0;
+    z-index: 10;
+    font-family: inherit;
+}
+
+.zen input[type='submit']{
+	width: auto;
+}
+
+.zen .sb-search-submit{
+	background: #fff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.zen .sb-icon-search, 
+.zen .sb-search-submit{
+	width: 15px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.zen .sb-icon-search{
+	color: #000;
+	z-index: 99999;
+	font-size: 13px;
+	font-family: 'fontAwesome';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.zen .sb-icon-search::before {
+    content: "\f002";
+}
+
+/********************dropdown
+********************************************/
+
+.zen .dropdown{
+	display: none;
+}
+
+.zen .list_zen{
+	display: none;
+	position: absolute;
+	background-color: #f7f7f7;
+	min-width: 6%;
+	box-shadow: 0px 8px 16px 0px #555;
+}
+
+.zen .list_zen a{
+	float: none;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    clear: both;
+    white-space: wrap;
+}
+
+.zen .list_zen a:hover{
+	background-color: #ddd;
+}
+
+.zen .dropdown:hover .list_zen{
+	display: block;
+}

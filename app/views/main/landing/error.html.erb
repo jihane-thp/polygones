@@ -1,0 +1,23 @@
+
+<%= stylesheet_link_tag :admin %>
+
+            <div class="wrapper-page">
+                <div class="account-pages">
+                    <div class="account-box">
+                        <div class="account-logo-box bg-primary p-4">
+                            <h3 class="m-0 text-center text-white"><%= image_tag 'main/logo.png', alt:"logo", height:"40" %></h3>
+                        </div>
+                        <div class="account-content text-center">
+                                <h1 class="text-error display-4 font-weight-bold">404</h1>
+                            <h3 class="text-uppercase font-weight-bold text-danger m-t-30">Il n'y a rien ici !</h3>
+                            <p class="text-muted mt-3">Vous ne pouvez pas accéder à cette page. Si vous essayez d'accéder à votre console d'administration, veuillez vous <%= link_to "connecter", new_user_session_path %></p>
+
+                            <%= link_to "Retourner vers l'accueil", root_path, class:"btn btn-md btn-block btn-primary waves-effect waves-light m-t-20" %>
+                        </div>
+                    </div>
+                </div>
+                <!-- end account-box-->
+
+
+            </div>
+

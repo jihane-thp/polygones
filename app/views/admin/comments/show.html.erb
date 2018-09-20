@@ -1,0 +1,31 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Mon commentaire</h4><br/>
+                            <div class="row">
+                                <strong>De :&nbsp;</strong>
+                                <% if @comment.name %>
+                                <%= @comment.name %>
+                                <% else %>
+                                Anonyme
+                                <% end %>
+                            </div>
+                            <div class="row">
+                                <strong>Date :&nbsp;</strong>
+                                <%= @comment.created_at.to_formatted_s(:fulldate) %>
+                            </div>
+                            <div class="row">
+                                <strong>Commentaire :&nbsp;</strong>
+                                <%= @comment.content %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+
+								<form action=" <% new_admin_order_path %>">
+									<div class="shop-cart-table">
+										<div class="table-content table-responsive">
+											
+														<% for @product_in_cart in @cart.products %>
+															<%= render 'admin/carts/shared/cart_product', product_in_cart: @product_in_cart , edit_quantity: false, edit_remove: true %>
+														<% end %>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<div class="customer-login payment-details mt-30 mb-30">
+												<table>
+													<tbody>
+														<tr>
+															<td class="text-left">Total </td>
+															<td class="text-right"> <%= @cart.total %> €</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							<br/>
+							<%= button_to "Confirmer la commande", new_admin_order_path, method: :get, class: "btn btn-primary" %>

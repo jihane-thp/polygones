@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polygones - Dashboard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'superadmin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'superadmin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'superadmin/dashboard/shared/header' %>
+    <%= render 'superadmin/dashboard/shared/sidebar' %>
+
+    <!-- ============================================================== -->
+                <!-- Start right Content here -->
+                <!-- ============================================================== -->
+                <div class="content-page">
+                    <!-- Start content -->
+                    <div class="content">
+                        <div class="container-fluid">
+
+                          <%= yield %>
+
+
+
+
+
+                            <!-- End row -->
+
+                        </div> <!-- container -->
+
+                    </div> <!-- content -->
+
+                  </div>
+
+    <%= render 'superadmin/dashboard/shared/footer' %>
+
+    
+
+  </body>
+</html>

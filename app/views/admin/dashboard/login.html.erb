@@ -1,0 +1,57 @@
+<header>
+				<div class="container">
+					<div class="row nav-wrapper">
+						<div class="col-lg-12 p-0">
+							<!--Navbar Start-->
+							<nav class="navbar navbar-expand-lg navbar-custom">
+								<div class="container">
+									<!-- LOGO -->
+									<a class="" href="index.html">
+										<img src="images/logo.png" alt="" height="24" />
+									</a>
+									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+										<i class="fa fa-bars text-white"></i>
+									</button>
+									<div class="collapse navbar-collapse" id="navbarCollapse">
+										<ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+											<li class="nav-item">
+												<a href="#team" class="nav-link">Log In</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="btn-signup btn-primary">Sign Up</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+							<!-- Navbar End -->
+              <h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+						</div>
+					</div> <!-- End row -->
+        </div>

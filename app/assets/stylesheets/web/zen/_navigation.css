@@ -1,0 +1,18 @@
+.zen .page_nav{
+	margin: 2%;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.zen .page_nav a{
+	color: #222;
+	display: inline-block;
+	padding: 11px 14px;
+	margin: 15px 3px 50px 0;
+}
+
+.zen .page_nav a:hover{
+	color: #FFA687;
+}

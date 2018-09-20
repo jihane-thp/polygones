@@ -1,0 +1,123 @@
+@media only screen and (max-width: 1700px) {
+	
+	/**************************************************HEADER
+	***********************************************************/
+	.zen .rapper{
+		width: 88%;
+	}
+
+	/**************************************************WRAPPER
+	***********************************************************/
+	.zen #Header1_headerimg{
+		margin-top: 5%!important;
+	}
+
+	/**************************************************ARTICLE
+	***********************************************************/
+	.zen .img_post{
+		width: 68%;
+		height: 336px;
+	}
+
+	.zen .img_post img{
+		height: 336px;
+		width: 653px;
+	}
+
+	.zen .content_post{
+		width: 56%;
+		height: 385px;
+	}
+} 
+
+@media only screen and (max-width: 1300px) {
+	.zen .img_post img{
+		width: 130%;
+	}
+}
+
+@media only screen and (max-width: 1030px) {
+	/**************************************************ARTICLE
+	***********************************************************/
+	.zen .img_post{
+		width: 64%;
+	}
+
+	.zen .img_post img{
+		width: 100%;
+	}
+
+	.zen .content_post{
+		width: 53%;
+		height: 131px;
+	}
+
+	.zen .content_post h2.title_article{
+		padding-bottom: 0;
+		margin-bottom: -9%;
+	}
+
+	.zen .content_article{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 740px) {
+	/**************************************************HEADER
+	***********************************************************/
+	.zen .rapper{
+		display: none;
+	}
+
+	.zen .dropdown{
+		display: block!important;
+	}
+
+	.zen .dropdown a{
+		color: black;
+	}
+
+	/**************************************************ARTICLE
+	***********************************************************/
+	.zen .post{
+		margin-left: 19%;
+		width: 100%;
+	}
+
+	.zen .img_post,
+	.zen .img_post img{
+		height: 200px;
+	}
+
+	.zen .content_post{
+		width: 43%;
+		height: 79px;
+	}
+
+	.zen .title-article{
+		padding: 0!important;
+		font-size: 1.2rem!important;
+		margin: 0!important;
+		background-color: red;
+	}
+
+	.zen .title-article a{
+		margin-top: 5%!important;
+	}
+
+	.zen .footer_article{
+		font-size: 1rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.zen .center_post{
+		margin-top: 3%;
+	}
+
+	.zen .details{
+		text-transform: lowercase;
+	}
+
+}
+

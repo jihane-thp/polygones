@@ -1,0 +1,33 @@
+<div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <%= link_to superadmin_path, class: "logo" do%>
+                        <span>
+                            <%= image_tag 'admin/dashboard/logo.png', height:'32' %>
+                        </span>
+                        <i>
+                            <%= image_tag 'admin/dashboard/logo_sm.png', height:'32' %>
+                        </i>
+                    <% end %>
+                </div>
+
+                <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+
+                        <li class="list-inline-item dropdown notification-list">
+                                <i class="noti-icon"><div class="img-fluid rounded-circle"></div></i>
+                                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"text-white"%>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+            <!-- Top Bar End -->

@@ -1,0 +1,84 @@
+
+			<!-- BLGO-AREA START -->
+			<div class="blog-area blog-2 blog-details-area  pt-80 pb-80">
+				<div class="container">
+					<div class="blog">
+						<div class="row">
+							<!-- Single-blog start -->
+							<div class="col-lg-12">
+								<div class="single-blog mb-30">
+									<div class="blog-photo">
+										<img src="<%= @article.image %>">
+										<div class="like-share fix">
+											<i class="zmdi zmdi-account"></i><span><%= @article.user.nickname %></span>
+											<i class="zmdi zmdi-comments"></i><span><%= @comments.count %> Comments</span>
+										</div>
+										<div class="post-date post-date-2">
+											<span class="text-dark-red"> <%= @article.created_at.to_formatted_s(:onlyday) %></span>
+											<span class="text-dark-red text-uppercase"><%= @article.created_at.to_formatted_s(:mon) %></span>
+										</div>
+									</div>
+									<div class="blog-info blog-details-info">
+										<h4 class="post-title post-title-2"><a href="#"><%= @article.title %></a></h4>
+										<%== @article.content %>
+                    <div class="post-share-tag clearfix mt-40">
+                    <p>Ecrit par <%= @article.user.nickname %> le  <%= @article.created_at.to_formatted_s(:fulldate)%></p>
+                    </div>
+										</div>
+										<div class="pro-reviews mt-60">
+											<div class="customer-review mb-60"> <!-- Commentaires -->
+												<h3 class="tab-title title-border mb-30">Commentaires</h3>
+
+												<table class="product-comments clearfix" id="comments">
+
+													<%for comment in @comments%>
+												
+																	<%= render 'web/hurst/shared/comment', comment: comment %>
+													<% end %>
+
+												</table>
+											</div> <!-- Commentaires -->
+
+											<div class="leave-review"> <!-- Ajouter Commentaires -->
+												<h3 class="tab-title title-border mb-30">Un commentaire ?</h3>
+
+												<div class="reply-box">
+												  <%= form_with(model: @comment, url: "/#{@site.url}/new_comment") do |form| %>
+												    <div class="row">
+												      <div class="col-md-6 col-sm-6 col-xs-12">
+																<%= form.text_field :name, placeholder:"Votre nom"   %>
+												      </div>
+												    </div>
+
+														<%= form.hidden_field(:site,value: @site.id  ) %>
+													 	<%= form.hidden_field(:article,value: @article.id  ) %>
+
+
+												    <div class="row">
+												      <div class="col-md-12">
+																<%= form.text_area :content, class:"custom-textarea", placeholder:"Votre message..."  %>
+
+												        <!--<textarea class="custom-textarea" name="message" placeholder="Votre message..." ></textarea> -->
+												        <button type="submit" data-text="Envoyer" class="button-one submit-button mt-20">Envoyer</button>
+
+															</div>
+												    </div>
+												  </form>
+													<% end %>
+
+												</div> <!-- Ajouter Commentaires -->
+
+
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Single-blog end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BLGO-AREA END -->

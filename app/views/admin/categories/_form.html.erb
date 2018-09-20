@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, category] , local: true, url: admin_category_path(@site.url)) do |form| %>
+  <% if category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-row align-items-center">
+      <div class="form-group col-md-12">
+        <%= form.label :titre_de_la_catégorie , class: "col-form-label label1"%>
+        <%= form.text_field :title, autocomplete: "Titre de la catégorie", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-row align-items-center">
+      <div class="form-group col-md-12">
+        <%= form.label :adresse_de_la_catégorie , class: "col-form-label label1"%>
+        <%= form.text_field :slug, autocomplete: "Adresse de la catégorie", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="actions">
+        <%= form.submit "Mettre à jour", class: 'btn btn-primary mb-2' %> <%= link_to "Retour", admin_categories_path, class: 'btn bt-secondary mb-2'%>
+      </div>
+    </div>
+<% end %>

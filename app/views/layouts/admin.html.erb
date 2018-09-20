@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polygones - Dashboard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render 'admin/dashboard/shared/header' %>
+    <%= render 'admin/dashboard/shared/sidebar' %>
+    <%= yield %>
+
+    <%= render 'admin/dashboard/shared/footer' %>
+
+    <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if($("#elm1").length > 0){
+                tinymce.init({
+                    selector: "textarea#elm1",
+                    theme: "modern",
+                    height:300,
+                    plugins: [
+                        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "save table contextmenu directionality emoticons template paste textcolor"
+                    ],
+                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+                    style_formats: [
+                        {title: 'Bold text', inline: 'b'},
+                        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                        {title: 'Example 1', inline: 'span', classes: 'example1'},
+                        {title: 'Example 2', inline: 'span', classes: 'example2'},
+                        {title: 'Table styles'},
+                        {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                    ]
+                });
+            }
+        });
+
+        (function ($) {
+
+            'use strict';
+
+            function initSlimscrollMenu() {
+
+                $('.slimscroll-menu').slimscroll({
+                    height: 'auto',
+                    position: 'right',
+                    size: "5px",
+                    color: '#9ea5ab',
+                    wheelStep: 5,
+                    touchScrollStep: 50
+                });
+            }
+
+            function initSlimscroll() {
+                $('.slimscroll').slimscroll({
+                    height: 'auto',
+                    position: 'right',
+                    size: "5px",
+                    color: '#9ea5ab',
+                    touchScrollStep: 50
+                });
+            }
+
+            function initMetisMenu() {
+                //metis menu
+                $("#side-menu").metisMenu();
+            }
+
+            function initLeftMenuCollapse() {
+                // Left menu collapse
+                $('.button-menu-mobile').on('click', function (event) {
+                    event.preventDefault();
+                    $("body").toggleClass("enlarged");
+                });
+            }
+
+            function initEnlarge() {
+                if ($(window).width() < 1025) {
+                    $('body').addClass('enlarged');
+                } else {
+                    $('body').removeClass('enlarged');
+                }
+            }
+
+            function initActiveMenu() {
+                // === following js will activate the menu in left side bar based on url ====
+                $("#sidebar-menu a").each(function () {
+                    var pageUrl = window.location.href.split(/[?#]/)[0];
+                    if (this.href == pageUrl) {
+                        $(this).addClass("active");
+                        $(this).parent().addClass("active"); // add active to li of the current link
+                        $(this).parent().parent().addClass("in");
+                        $(this).parent().parent().prev().addClass("active"); // add active class to an anchor
+                        $(this).parent().parent().parent().addClass("active");
+                        $(this).parent().parent().parent().parent().addClass("in"); // add active to li of the current link
+                        $(this).parent().parent().parent().parent().parent().addClass("active");
+                    }
+                });
+            }
+
+            function init() {
+                initSlimscrollMenu();
+                initSlimscroll();
+                initMetisMenu();
+                initLeftMenuCollapse();
+                initEnlarge();
+                initActiveMenu();
+            }
+
+            init();
+
+        })(jQuery)
+    </script>
+
+  </body>
+</html>

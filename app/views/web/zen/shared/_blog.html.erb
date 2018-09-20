@@ -1,0 +1,37 @@
+
+	<% for article in @articles %>
+	<article class="post">
+		<div class="img_post">
+			<a href="#">
+				<img src="<%= article.image %>">
+			</a>
+		</div>
+		<div class="content_post">
+			<h2 class="title_article">
+				<a href="#"><%= article.title %></a>
+			</h2>
+			<div class="content_article">
+					<%== article.content %>			</div>
+			<div class="footer_article">
+				<div class="center_post">
+					<div class="details">
+						<span class="author">
+							<i class="fa fa-user"> titi </i>
+						</span>
+						<span class="com_post">
+							<a href="#">
+								<i class="fa fa-comments"> 1 comment  </i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+		<%end %>
+
+
+
+
+
+<%= render 'web/zen/shared/navigation' %>

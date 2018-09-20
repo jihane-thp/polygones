@@ -1,0 +1,12 @@
+$(document).ready(function() {
+
+let comment = $("<%= j (render 'web/zen/shared/comment.html.erb', comment: @comment) %>");
+// Je crée ma variable new_gossip. Le j signifie escape javascript et permet d'executer de l'erb.
+
+$('#comments').append(comment);
+
+$('#comment_content').val('');
+
+
+
+});

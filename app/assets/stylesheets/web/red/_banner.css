@@ -1,0 +1,14 @@
+.red .jumbotron{
+  min-height: 40vh;
+	color: rgb(24, 24, 24);
+	display :flex;
+	align-items: center;
+	text-align: center;
+	background-color: transparent!important;
+
+}
+
+.red .flowertitle {
+	font-family: "al-fresco";
+	font-size: 4em;
+}

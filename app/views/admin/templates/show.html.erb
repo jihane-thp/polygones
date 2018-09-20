@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @template.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @template.slug %>
+</p>
+
+<p>
+  <strong>View article:</strong>
+  <%= @template.view_article %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @template.logo %>
+</p>
+
+<%= link_to 'Edit', edit_admin_template_path(@site.url, @template) %> |
+<%= link_to 'Back', admin_templates_path %>

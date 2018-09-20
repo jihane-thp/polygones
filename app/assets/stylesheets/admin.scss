@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+  */
+
+  @import 'morris/morris.css';
+  @import 'sweet-alert2/sweetalert2.min';
+  @import 'admin/css/bootstrap.min';
+  @import 'admin/css/icons';
+  @import 'admin/css/metismenu.min';
+  @import 'admin/css/app';
+  @import 'admin/css/style';
+  @import 'admin/header';
+  @import 'admin/body';
+ 
+  /* --- Import Google Fonts stylesheets --- */
+ @import url("https://use.typekit.net/wxs4zbu.css");
+ 
+ /* --- Fonts --- */
+ body {
+   font-family: "foco",sans-serif;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 18px;
+ }
+ 
+ h1 {
+   font-family: "omnes-pro";
+ }
+ 
+ h2, h3 {
+  font-family: "foco",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+ }
+ 
+ h3 {
+   font-size: 26px;
+   
+ }

@@ -1,0 +1,2 @@
+class TemplatesSite < ApplicationRecord
+end

@@ -1,0 +1,28 @@
+<div class="content-page">
+  <div class="content">
+    <div class="container-fluid">
+      <!-- Nouvelle catégorie -->
+      <div class="row">
+        <div class="col-12 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="m-b-30 m-t-0 header-title">Mes plugins</h4> <br/>
+
+              <table class="table table-striped mb-0">
+                <tbody>
+                  <% @plugins.each do |plugin| %>
+                    <tr>
+                      <td><%= plugin.name %></td>
+                      <td><%= plugin.is_activated %></td>
+                      <td><%= link_to 'Edit', edit_admin_plugin_path(@site.url,plugin) %></td>
+                    </tr>                    
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

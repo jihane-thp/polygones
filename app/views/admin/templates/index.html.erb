@@ -1,0 +1,52 @@
+<%= render 'admin/dashboard/shared/header' %>
+<%= render 'admin/dashboard/shared/sidebar' %>
+
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-12 col-xs-12">
+                  <div class="card">
+                      <div class="card-body">
+
+                        <% if @templates.empty? %>
+                            <h4 class="m-b-30 m-t-0 header-title">Pas de template</h4><br/>
+
+                        <% else %>
+                          <h4 class="m-b-30 m-t-0 header-title">Sélectionner le template</h4><br/>
+
+                                        <%= form_with(model: [:admin, @template], local: true, url: admin_update_template_path(@site.url),method: :get) do |form| %>
+
+                                <div class="form-row align-items-center">
+                                     <div class="form-group col-md-12">
+                                        <%= form.collection_radio_buttons :id, @templates, :id, :slug, prompt: true do |b| %>
+                                          <%= b.label {b.radio_button + b.label} %><br>
+                                        <% end %>
+                                    </div>
+                                </div>
+                                  <%= form.submit "Mettre à jour", class: 'btn btn-primary mb-2' %>
+                                  <% end %>
+                                  <br/>
+                                  </div>
+                              </div>
+                              <% end %>
+
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 col-xs-12">
+
+              </div>
+          </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<%= render 'admin/dashboard/shared/footer' %>

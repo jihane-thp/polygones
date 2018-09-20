@@ -1,0 +1,115 @@
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+  margin-top: 25px;
+  color: #343A40;
+}
+
+.card>hr {
+  margin-right: 0;
+  margin-left: 0
+}
+
+.card>.list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem
+}
+
+.card>.list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: .25rem;
+  border-bottom-left-radius: .25rem
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem
+}
+
+.col-form-label {
+  padding-top: calc(.375rem + 1px);
+  padding-bottom: calc(.375rem + 1px);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5
+}
+
+.col-form-label-lg {
+  padding-top: calc(.5rem + 1px);
+  padding-bottom: calc(.5rem + 1px);
+  font-size: 1.25rem;
+  line-height: 1.5
+}
+
+.col-form-label-sm {
+  padding-top: calc(.25rem + 1px);
+  padding-bottom: calc(.25rem + 1px);
+  font-size: .875rem;
+  line-height: 1.5
+}
+
+.label {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  color: #313a46;
+  letter-spacing: 0.01em;
+  font-family: "Montserrat",sans-serif;
+}
+
+.label2 {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  color: #313a46;
+  letter-spacing: 0.01em;
+  font-family: "Montserrat",sans-serif;
+}
+
+.btn-primary {
+  background-color: #3bc0c3 !important;
+  border: 1px solid #3bc0c3 !important
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.open>.dropdown-toggle.btn-primary {
+  background-color: #35adaf !important;
+  border-color: #35adaf !important
+}
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(59, 192, 195, 0.3);
+  box-shadow: 0 0 0 2px rgba(59, 192, 195, 0.3)
+}
+
+.header-title {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700
+}
+

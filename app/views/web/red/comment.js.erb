@@ -1,0 +1,10 @@
+$(document).ready(function() {
+
+let comment = $("<%= j (render 'web/hurst/shared/comment.html.erb', comment: @comment) %>");
+
+$('#comments').append(comment);
+
+$('#comment_content').val('');
+$('#comment_name').val('');
+
+});

@@ -1,0 +1,51 @@
+@media only screen and (max-width: 1200px) {
+	/**************************************Card
+	*************************************************/
+	.red .thumb {
+		width: 150px;
+		height: 150px;
+	}
+
+	/**************************************Section
+	*************************************************/
+	.red #section_rage article h2{
+		font-size: 1.2rem;
+	}
+
+	.red #section_rage article p{
+		font-size: 0.9rem;
+	}
+
+	/**************************************Footer
+	*************************************************/
+	.red .list_rage{
+		display: flex;
+		justify-content: flex-end;
+		margin-top: -5%;
+		list-style: none;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	/**************************************Card
+	*************************************************/
+	.red .thumb {
+		width: 100px;
+		height: 100px;
+	}
+
+	/**************************************Footer
+	*************************************************/
+	.red .list_rage{
+		font-size: 0.7rem;
+		margin-top: -8%!important;
+	}
+
+	.red .nav-link{
+		padding: 0.5rem!important;
+	}
+
+	.red #footer_rage .navbar{
+		padding-bottom: 0!important;
+	}
+}

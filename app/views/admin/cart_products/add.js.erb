@@ -1,0 +1,4 @@
+$('#cart').append('<%= j render('shared/item_in_cart', item: @item) %>');
+$('#total_cart').html("<%= @cart.total %>€")
+$('#nbcatcart').html("<%= @cart.items.count %>")
+$('#nbcat').html("<%= @cart.items.count %> items ")

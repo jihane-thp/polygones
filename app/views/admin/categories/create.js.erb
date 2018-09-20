@@ -1,0 +1,12 @@
+$(document).ready(function() {
+
+let categories = $("<%= j (render 'admin/categories/category', category: @category) %>");
+$('#categories').append(categories);
+$('#category_title').val('');
+$('#category_slug').val('');
+
+let error = $("<%= j (render 'admin/categories/error', category: @category) %>");
+
+$('#error_explanation').val(error);
+
+});

@@ -1,0 +1,40 @@
+<div class="content-page">
+  <div class="content">
+
+    <h1>Nouvelle catégorie</h1>
+
+    <p id="notice"><%= notice %></p>
+
+    <p id="notice"><%= notice %></p>
+
+<%= form_with(model: [:admin, @category] , local: true, url: admin_categories_path(@site.url)) do |form| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :title %><br />
+    <%= form.text_field :title, autocomplete: "Titre de la catégorie" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %><br />
+    <%= form.text_field :slug, autocomplete: "Slug de la catégorie" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div> </div>
+
+
+<%= link_to 'Back', admin_categories_path %>

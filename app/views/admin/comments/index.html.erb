@@ -1,0 +1,31 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Mes commentaires</h4><br/>
+                            <table class="table table-striped mb-0">
+                                <tbody>
+                                    
+                                    <% if @comments.empty? %>
+                                        <p>Vous n'avez pas encore reçu de commentaire.</p>
+                                    <% else %>
+                                        <% for commentaire in @comments %>
+                                        <tr>
+                                            <td><%= commentaire.content.slice(0..100) + "..." %></td>
+                                            <td><i class="far fa-eye"></i><%= link_to ' Voir', admin_comment_path(@site.url,commentaire) %></td>
+                                            <td><i class="far fa-trash-alt"></i><%= link_to ' Supprimer', admin_comment_path(@site.url,commentaire), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                        </tr>
+                                        <%end%>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

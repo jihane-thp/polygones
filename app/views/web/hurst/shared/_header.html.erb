@@ -1,0 +1,22 @@
+			<!-- HEADER-AREA START -->
+			<header id="sticky-menu" class="header header-2">
+				<div class="header-area">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-2 col-xs-2">
+								<div class="logo text-center">
+									 <%= image_tag 'web/hurst/logo.png', height:25 %>
+								</div>
+
+							</div>
+							<div class="col-sm-10 col-xs-8 valign-center">
+              <% for tab in @tabs %>
+              	<a href="<%= tab.url %>" class="header-links"><%= tab.title %></a><i class="verticalbar">|</i>
+          		<% end %>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- HEADER-AREA END -->

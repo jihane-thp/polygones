@@ -1,0 +1,25 @@
+		<section class="content-wrap bg-light section pb0" id="features">
+			<div class="container">
+		        <div class="row">
+
+		            <div class="col-sm-6">
+		                <div class="feature-sec">
+		                	<h3>La console d'administration</h3>
+		                	<p>Simple, moderne et épurée, elle vous permettra de configurer votre blog et publier vos articles très simplement. </p>
+								<% if user_signed_in? && current_user.admin?%>
+									<%= link_to "Accéder à ma console", admin_dashboard_index_path(current_user.site.url), class:"btn-signup btn-primary btn-lg" %>
+								<% else %>
+									<%= link_to "Créer mon blog", new_user_registration_path, class:"btn-signup btn-primary btn-lg" %>
+								<% end %>
+								
+		                </div>
+		            </div><!-- end col -->
+
+		            <div class="col-sm-6 featured-img">
+		            		<%= image_tag 'main/mac.png', alt:"admin-img", class:"img-fluid d-block" %>
+		            </div>
+
+			    </div> <!-- end row -->
+			</div><!-- end container -->
+		</section>
+		<!-- end Features -->

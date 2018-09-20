@@ -1,0 +1,22 @@
+<%= render 'admin/dashboard/shared/header' %>
+<%= render 'admin/dashboard/shared/sidebar' %>
+
+<div class="content-page">
+  <div class="content">
+    <div class="container-fluid">
+      <!-- Nouvelle catégorie -->
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="m-b-30 m-t-0 header-title">Mes catégories</h4> <br/>
+              <%= render 'form', category: @category %>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'admin/dashboard/shared/footer' %>

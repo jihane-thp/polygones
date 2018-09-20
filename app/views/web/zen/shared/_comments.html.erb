@@ -1,0 +1,23 @@
+
+<%= form_with(model: @comment, url: "/site2/new_comment") do |form| %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <%= form.hidden_field(:site,value: @site.id  ) %>
+  <%= form.hidden_field(:article,value: @article.id  ) %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<ul id="comments">
+  <% @comments.each do |comment| %>
+      <%= render 'web/zen/shared/comment' , comment: comment %>
+    <% end %>
+
+</ul>

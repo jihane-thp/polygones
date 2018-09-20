@@ -1,0 +1,7 @@
+<li id="<%= comment.id %>" style="background: beige;margin: 20px;padding: 20px;display: block;">
+  <% if comment.user.nil? %>
+    Anonyme
+  <% else %>
+  <%= comment.user.nickname %>
+  <% end %>  -- <%= comment.created_at %> <br/> <%= comment.content %>
+</li>

@@ -1,0 +1,20 @@
+<table class="table table-striped mb-0">
+
+	<tbody>
+		<tr id="tr_cart_product_<%=@product_in_cart.id%>">
+			<td>
+				<a class="text-light-black" href="#"><%= @product_in_cart.title%></a>
+			</td>
+
+			<td class="product-subtotal"><%= @product_in_cart.price %> €</td>
+				<% if edit_remove %>
+					<td class="product-remove">
+						<%= link_to  admin_remove_product_in_cart_path(@site.url, product_in_cart.id) do%>
+							<%= fa_icon "trash-alt" %>
+						<% end %>
+					</td>
+				<% end %>
+		</tr>
+
+	</tbody>
+</table>

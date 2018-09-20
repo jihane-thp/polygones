@@ -1,0 +1,65 @@
+<div class="container">
+	<div class="row">
+		<div class="card card-title2">
+			<h5 class="title-card"><%= @article.title %></h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="card col-md-12 col-sm-12 col-xs-12">
+			<div class="flex_card">
+				<div class="card-body2">
+					<img src="<%= @article.image %>" class="card-img-top"></a>
+					<div class="article">
+						<%== @article.content %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="card card-title3">
+			<p>Ecrit par <%= @article.user.nickname %> le <%= @article.created_at.to_formatted_s(:fulldate)%></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="card col-md-12 col-sm-12 col-xs-12">
+			<h5 class="title-card">Commentaires</h5>
+			<table class="product-comments clearfix" id="comments">
+				<% if @comments.empty? %>
+					Pas de commentaire pour le moment.
+				<%else%>
+					<%for comment in @comments%>
+						<%= render 'web/hurst/shared/comment', comment: comment %>
+					<% end %>
+				<% end %>
+			</table>
+			<br/>
+				<h5 class="title-card">Un commentaire ?</h5>
+
+					<%= form_with(model: @comment, url: "/#{@site.url}/new_comment") do |form| %>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<p><%= form.text_field :name, placeholder:"Votre nom", class: "form-control"  %></p>
+							</div>
+						</div>
+
+						<%= form.hidden_field(:site,value: @site.id  ) %>
+						<%= form.hidden_field(:article,value: @article.id  ) %>
+
+
+						<div class="row">
+							<div class="col-md-12">
+								<p><%= form.text_area :content, placeholder:"Votre message...", class: "form-control"  %></p>
+
+								<!--<textarea class="custom-textarea" name="message" placeholder="Votre message..." ></textarea> -->
+								<button type="submit" data-text="Envoyer">Envoyer</button>
+
+							</div>
+						</div>
+					<% end %>
+ <!-- Ajouter Commentaires -->
+			</div>
+		</div>
+	</div>
+</div>
+		

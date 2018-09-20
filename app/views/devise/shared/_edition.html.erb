@@ -1,0 +1,83 @@
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="m-b-30 m-t-0 header-title">Editer mon compte</h4>
+                            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                            <%= devise_error_messages! %>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <%= f.label :prénom, class:"col-form-label" %><br />
+                                  <%= f.text_field :first_name, autocomplete: "prénom", class:"form-control" %>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                  <%= f.label :nom_de_famille, class:"col-form-label" %><br />
+                                  <%= f.text_field :last_name, autocomplete: "nom de famille", class:"form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <%= f.label :pseudonyme, class:"col-form-label" %><br />
+                                  <%= f.text_field :nickname, autocomplete: "pseudonyme", class:"form-control" %>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                  <%= f.label :email, class:"col-form-label" %><br />
+                                  <%= f.email_field :email, autocomplete: "email", class:"form-control", id:"inputEmail4" %>
+                                </div>
+
+                                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                                <% end %>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                  <%= f.label :mot_de_passe, class:"col-form-label" %> <i>(si vous souhaitez le changer)</i><br />
+                                  <%= f.password_field :password, autocomplete: "new-password", class:"form-control", id:"inputPassword4" %>
+                                  <% if @minimum_password_length %>
+                                    <br />
+                                    <em><%= @minimum_password_length %> characters minimum</em>
+                                  <% end %>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                  <%= f.label :confirmation_du_mot_de_passe, class:"col-form-label" %> <i>(si vous souhaitez le changer)</i><br />
+                                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", id:"inputPassword4" %>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                  <%= f.label :mot_de_passe_actuel, class:"col-form-label" %> <i>(pour confirmer vos changements)</i><br />
+                                  <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", id:"inputPassword4" %>
+                                </div>
+                            </div>
+
+                            <div class="actions">
+                              <%= f.submit "Mettre à jour", class:"btn btn-primary" %>
+                            </div>
+                          <% end %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                          <h4 class="m-b-30 m-t-0 header-title">Supprimer mon blog</h4>
+                          <p>Attention ! Si vous le supprimez, votre blog n'existera plus et ne pourra être récupéré. <%= button_to "Supprimer mon blog", registration_path(resource_name), class:"btn btn-primary", data: { confirm: "Êtes vous sûr ? Cette opération est irréversible." }, method: :delete %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <!-- End row -->
+
+
